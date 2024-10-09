@@ -2,6 +2,7 @@ import parsec_setup  # Pour configurer Parsec
 import session_setup  # Pour préparer la session (déplacer des dossiers et créer des liens symboliques)
 import gnome_favorite_apps_setup  # Pour définir les applications favorites dans GNOME
 import launch_chrome_and_vscode  # Pour lancer Chrome et VSCode
+import ssh_key_maknager # Pour gérer les clés SSH
 
 def main():
     print("Options disponibles :")
@@ -10,7 +11,8 @@ def main():
     print("3. Préparer la session (déplacer et créer des liens symboliques).")
     print("4. Définir les applications favorites dans GNOME.")
     print("5. Lancer Chrome et VSCode.")
-    print("6. Autres fonctionnalités à ajouter.")
+    print("6. Gérer les clés SSH.")
+    print("7. Autres fonctionnalités à ajouter.")
 
     choice = input("Choisissez une option : ")
 
@@ -36,6 +38,10 @@ def main():
         launch_chrome_and_vscode.start()
 
     elif choice == "6":
+        print("Gestion des clés SSH...")
+        ssh_key_maknager.manage_ssh()
+
+    elif choice == "7":
         print("Fonctionnalités supplémentaires à ajouter.")
 
     else:

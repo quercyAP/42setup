@@ -30,25 +30,10 @@ def display_public_key():
     else:
         print("Aucune clé publique SSH trouvée.")
 
-def main():
-    print("Gestion des clés SSH pour l'utilisateur.")
-    print("1. Vérifier et créer une clé SSH si nécessaire.")
-    print("2. Afficher la clé publique existante.")
-    
-    choice = input("Choisissez une option : ")
-    
-    if choice == "1":
-        if check_ssh_key_exists():
-            print("Une clé SSH existe déjà.")
-            display_public_key()
-        else:
-            create_ssh_key()
-    
-    elif choice == "2":
+def manage_ssh():
+    if check_ssh_key_exists():
+        print("Une clé SSH existe déjà.")
         display_public_key()
-
     else:
-        print("Option invalide.")
+        create_ssh_key()
 
-if __name__ == "__main__":
-    main()
